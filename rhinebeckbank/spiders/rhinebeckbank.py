@@ -24,7 +24,7 @@ class RhinebeckbankSpider(scrapy.Spider):
         item = ItemLoader(Article())
         item.default_output_processor = TakeFirst()
 
-        title = response.xpath('//h1/text()').get()
+        title = response.xpath('//h2/text()').get()
         if title:
             title = title.strip()
 
